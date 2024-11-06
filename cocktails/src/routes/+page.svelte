@@ -2,7 +2,7 @@
 	// Importing necessary functions and components
 	import { onMount } from 'svelte';
 	import Dialog from '../components/cocktailPopUp/Dialog.svelte';
-    import Hero from '../components/hero/hero.svelte';
+	import Hero from '../components/hero/hero.svelte';
 
 	// Variables for managing dialog, selected cocktail, and cocktail data
 	let dialog, selectedCocktail;
@@ -10,6 +10,8 @@
 	let loading = true;
 	let error = null;
 	let selectedLetter = 'A';
+	
+	
 
 	// Function to fetch cocktails based on selected letter
 	async function fetchCocktails(letter) {
@@ -53,8 +55,10 @@
 </script>
 
 <!-- Main page container -->
+<Hero></Hero>
+
+<!-- Next Section with fade-in effect -->
 <div class="pageContainer">
-    <Hero></Hero>
 	<!-- Letter selection section -->
 	<div class="letterSelection">
 		<span>Select a letter: </span>
@@ -137,6 +141,12 @@
 </div>
 
 <style>
+	:global(body) {
+		margin: 0px;
+		padding: 0px;
+		font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial,
+			sans-serif;
+	}
 	.pageContainer {
 		padding: 2rem;
 		font-family: Arial, sans-serif;
